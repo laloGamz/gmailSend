@@ -10,7 +10,7 @@ const bot = new Telegraf('1964075051:AAEnaiTI6yd-3OydWFMH0m6wLg0BpSN4OAk')
 
 bot.start(ctx => {
   ctx.reply(
-    `Hola ${ctx.from.first_name}, como estas???, este es un bot para enviar mail`,
+    `Hola ${ctx.from.first_name}, como estas???, este es un bot para enviar email`,
     Markup.inlineKeyboard([
       Markup.callbackButton("enviar Mail", "LOVE_CALCULATE")
     ]).extra()
