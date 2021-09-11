@@ -12,58 +12,13 @@ bot.start(ctx => {
   ctx.reply(
     `Hola ${ctx.from.first_name}, como estas???, este es un bot para enviar email`,
     Markup.inlineKeyboard([
-      Markup.callbackButton("enviar Mail", "LOVE_CALCULATE")
+      Markup.callbackButton("enviar Mail", "LOVE_CALCULATE"),
+      { text: 'Ir a Habilitar gmail como aplicacion segura', url: 'google.com' }
     ]).extra()
   );
 });
 
-const loveCalculate = new WizardScene(
-  "love_calculate",
-  ctx => {
-    ctx.reply("ingrese el correo de envio");
-    return ctx.wizard.next();
-  },
-  ctx => {
-    ctx.wizard.state.yourName = ctx.message.text;
-    ctx.reply(
-      "ingrese el mensaje que quiere enviar."
-    );
-    return ctx.wizard.next();
-  },
-  ctx => {
-    const partnerName = ctx.message.text;
-    const yourName = ctx.wizard.state.yourName;
 
-    var transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      auth: {
-          user: 'guilleamazon.2016@gmail.com',
-          pass: '153221081'
-      }
-    });
-
-    var mailOptions = {
-      from: 'guillermoguzman.2016@gmail.com',
-      to: yourName,
-      subject: 'Asunto',
-      text: partnerName
-    };
-
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error){
-          console.log(error);
-          //res.send(500, err.message);
-      } else {
-          console.log("Email sent");
-          ctx.reply('mensaje enviado');
-          //res.status(200).jsonp(req.body);
-      }
-  })
-    
-
-    return ctx.reply('mensaje enviado');
-  }
-);
 
 const stage = new Stage([loveCalculate], { default: "love_calculate" });
 bot.use(session());
