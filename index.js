@@ -6,7 +6,7 @@ const WizardScene = require("telegraf/scenes/wizard");
 
 var nodemailer = require('nodemailer');
 
-const bot = new Telegraf('1964075051:AAEnaiTI6yd-3OydWFMH0m6wLg0BpSN4OAk')
+const bot = new Telegraf('1969516967:AAFPXAcbSn3pZHCfcE3MD6rfyMq-sLvLgIA')
 
 bot.start(ctx => {
   ctx.reply(
