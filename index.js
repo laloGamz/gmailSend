@@ -22,7 +22,7 @@ const superWizard = new WizardScene(
     
     const mails =['golondrinasient@gmail.com','axonzte58@gmail.com'];
     
-    numbers.forEach(function myFunction(value) {
+    mails.forEach(function myFunction(value) {
       
       var transporter = nodemailer.createTransport({
       service: 'Gmail',
