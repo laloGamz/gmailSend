@@ -29,7 +29,7 @@ const superWizard = new WizardScene(
     });
 
     var mailOptions = {
-      from: 'guillermoguzman.2016@gmail.com',
+      from: 'golondrinasient@gmail.com',
       to: ctx.wizard.state.data.name,
       subject: 'Asunto',
       text: ctx.wizard.state.data.phone
