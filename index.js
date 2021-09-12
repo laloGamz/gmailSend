@@ -19,17 +19,21 @@ const superWizard = new WizardScene(
   },
   ctx => {
     ctx.wizard.state.data.phone = ctx.message.text;
-
-    var transporter = nodemailer.createTransport({
+    
+    const mails =['golondrinasient@gmail.com','axonzte58@gmail.com'];
+    
+    numbers.forEach(function myFunction(value) {
+      
+      var transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
-          user: 'axonzte58@gmail.com',
+          user: value,
           pass: 'Alor_1130'
       }
     });
 
     var mailOptions = {
-      from: 'axonzte58@gmail.com',
+      from: value,
       to: ctx.wizard.state.data.name,
       subject: 'Asunto',
       text: ctx.wizard.state.data.phone
@@ -45,6 +49,10 @@ const superWizard = new WizardScene(
           //res.status(200).jsonp(req.body);
       }
     })
+    
+    });
+
+    
 
     return ctx.scene.leave();
   }
