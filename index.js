@@ -23,8 +23,8 @@ const superWizard = new WizardScene(
     var transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
-          user: 'guilleamazon.2016@gmail.com',
-          pass: '153221081'
+          user: 'golondrinasient@gmail.com',
+          pass: 'Alor_1130'
       }
     });
 
