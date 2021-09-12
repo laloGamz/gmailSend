@@ -23,13 +23,13 @@ const superWizard = new WizardScene(
     var transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
-          user: 'golondrinasient@gmail.com',
+          user: 'axonzte58@gmail.com',
           pass: 'Alor_1130'
       }
     });
 
     var mailOptions = {
-      from: 'golondrinasient@gmail.com',
+      from: 'axonzte58@gmail.com',
       to: ctx.wizard.state.data.name,
       subject: 'Asunto',
       text: ctx.wizard.state.data.phone
