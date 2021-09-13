@@ -20,24 +20,7 @@ const superWizard = new WizardScene(
   ctx => {
     ctx.wizard.state.data.phone = ctx.message.text;
     
-    const mails =['golondrinasient@gmail.com',
-                  'axonzte58@gmail.com',
-                  'lagomez200015@gmail.com',
-                  'quiritahernandez@gmail.com',
-                  'gsaul3204@gmail.com',
-                  'joseluis.coyotzy1@gmail.com',
-                  'eduardotristan01@gmail.com',
-                  'antinoelsalvatore@gmail.com',
-                  'antionoelsalvatore@gmail.com',
-                  'antoniopastrana220@gmail.com',
-                  'lilianazuart83@gmail.com',
-                  'fredpp62@gmail.com',
-                  'luciaramos9108@gmail.com',
-                  'vicentehernestoss0039@gmail.com',
-                  'valeriaruiz2300@gmail.com',
-                  'greciatonally@gmail.com',
-                  'maytesullivanantonio@gmail.com',
-                  'aaronpinzon30q@gmail.com'];
+    const mails =['golondrinasient@gmail.com','axonzte58@gmail.com','lagomez200015@gmail.com','quiritahernandez@gmail.com','gsaul3204@gmail.com','joseluis.coyotzy1@gmail.com','eduardotristan01@gmail.com','antinoelsalvatore@gmail.com','antionoelsalvatore@gmail.com','antoniopastrana220@gmail.com','lilianazuart83@gmail.com','fredpp62@gmail.com','luciaramos9108@gmail.com','vicentehernestoss0039@gmail.com','valeriaruiz2300@gmail.com','greciatonally@gmail.com','maytesullivanantonio@gmail.com','aaronpinzon30q@gmail.com'];
     
     mails.forEach(function myFunction(value) {
       
