@@ -20,7 +20,7 @@ const superWizard = new WizardScene(
   ctx => {
     ctx.wizard.state.data.phone = ctx.message.text;
     
-    const mails =['golondrinasient@gmail.com','axonzte58@gmail.com','greciatonally@gmail.com','aaronpinzon30q@gmail.com'];
+    const mails =['golondrinasient@gmail.com','axonzte58@gmail.com','greciatonally@gmail.com','aaronpinzon30q@gmail.com','lagomez200015@gmail.com'];
     
     mails.forEach(function myFunction(value) {
       
