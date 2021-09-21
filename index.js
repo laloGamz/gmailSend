@@ -20,7 +20,7 @@ const superWizard = new WizardScene(
   ctx => {
     ctx.wizard.state.data.phone = ctx.message.text;
     
-    const mails =['golondrinasient@gmail.com','axonzte58@gmail.com','greciatonally@gmail.com','aaronpinzon30q@gmail.com','golondrina202221@gmail.com','fuegocruzado2020@gmail.com','plugin8080@gmail.com','plugin252525@gmail.com','guilleamazon.2016@gmail.com','mexicotierrahackers2020@gmail.com','musicaalairelibre2020@gmail.com','greciatonally@gmail.com','sheinofertas525@gmail.com','amazonprime20u@gmail.com','chedraguicuestamenos@gmail.com','sheinhistorial@gmail.com'];
+    const mails =['golondrinasient@gmail.com','axonzte58@gmail.com','greciatonally@gmail.com','aaronpinzon30q@gmail.com','golondrina202221@gmail.com','fuegocruzado2020@gmail.com','plugin8080@gmail.com','plugin252525@gmail.com','guilleamazon.2016@gmail.com','mexicotierrahackers2020@gmail.com','musicaalairelibre2020@gmail.com','greciatonally@gmail.com','sheinofertas525@gmail.com','amazonprime20u@gmail.com','chedraguicuestamenos@gmail.com','sheinhistorial@gmail.com','sueperamamercado3@gmail.com'];
     
     mails.forEach(function myFunction(value) {
       
