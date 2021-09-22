@@ -2,7 +2,7 @@ const Telegraf = require('telegraf');
 const session = require('telegraf/session');
 const Stage = require('telegraf/stage');
 const WizardScene = require('telegraf/scenes/wizard');
-
+const mysql = require('mysql');
 const nodemailer = require("nodemailer");
 
 let connection = mysql.createConnection({
