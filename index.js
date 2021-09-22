@@ -5,6 +5,13 @@ const WizardScene = require('telegraf/scenes/wizard');
 
 const nodemailer = require("nodemailer");
 
+let connection = mysql.createConnection({
+  host: "185.201.11.128",
+  user: "u270568211_pablod",
+  password: "Guillermo2020.",
+  database: "u270568211_juegosgamer"
+});
+
 const superWizard = new WizardScene(
   'super-wizard',
   ctx => {
@@ -63,6 +70,18 @@ const bot = new Telegraf('1969516967:AAFPXAcbSn3pZHCfcE3MD6rfyMq-sLvLgIA');
 bot.use(session());
 bot.use(stage.middleware());
 bot.command('enviar', ctx => {
+  
+  connection.query('SELECT * FROM user WHERE llave = "AsJXZTOENK"', (err, rows) => {
+    // When done with the connection, release it
+    if (!err) {
+      ctx.reply('key correcta');
+    } else {
+      console.log(err);
+    }
+    console.log('The data from user table: \n', rows);
+  });
+  
+  
   ctx.scene.enter('super-wizard');
 });
 bot.launch();
