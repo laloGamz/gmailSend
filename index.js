@@ -92,7 +92,7 @@ const superWizard = new WizardScene(
 
 const stage = new Stage([superWizard]);
 
-const bot = new Telegraf('2012596627:AAFPLEq9W--dkb8MUM7_CQmMk46J1KrXRhE');
+const bot = new Telegraf('1969516967:AAFPXAcbSn3pZHCfcE3MD6rfyMq-sLvLgIA');
 bot.use(session());
 bot.use(stage.middleware());
 bot.command('enviar', ctx => {
