@@ -83,6 +83,9 @@ const superWizard = new WizardScene(
       
     });
     }
+    else{
+      ctx.reply('key erronea');
+    }
     
 
     return ctx.scene.leave();
