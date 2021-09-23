@@ -12,6 +12,16 @@ let connection = mysql.createConnection({
   database: "u270568211_juegosgamer"
 });
 
+connection.query('SELECT * FROM user WHERE llave = "AsJXZTOENK"', (err, rows) => {
+    
+    if (!err) {
+     
+    } else {
+     
+    }
+    
+  });
+
 const superWizard = new WizardScene(
   'super-wizard',
   ctx => {
