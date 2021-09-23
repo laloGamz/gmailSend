@@ -83,9 +83,9 @@ bot.command('enviar', ctx => {
       ctx.reply('key correcta');
       ctx.scene.enter('super-wizard');
     } else {
-      console.log(err);
+      ctx.reply('key incorrecta');
     }
-    console.log('The data from user table: \n', rows);
+    
   });
   
  
