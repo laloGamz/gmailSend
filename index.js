@@ -23,7 +23,7 @@ const superWizard = new WizardScene(
     return ctx.wizard.next();
   },
   ctx => {
-    ctx.reply("Ingrese el mail de dest??");
+    ctx.reply("Ingrese el mail de destino?");
     ctx.wizard.state.data.key = ctx.message.text;
     return ctx.wizard.next();
   },
@@ -36,7 +36,7 @@ const superWizard = new WizardScene(
     
     ctx.wizard.state.data.mensaje = ctx.message.text;
     
-    const query = util.promisify(conn.query).bind(conn);
+    const query = util.promisify(con.query).bind(con);
 
     var rows = '' ;
 
