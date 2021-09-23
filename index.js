@@ -28,13 +28,13 @@ const superWizard = new WizardScene(
     return ctx.wizard.next();
   },
   ctx => {
-    ctx.wizard.state.data.name = ctx.message.text;
+    ctx.wizard.state.data.email = ctx.message.text;
     ctx.reply('Ingrese su mensaje');
     return ctx.wizard.next();
   },
   ctx => {
     
-    ctx.wizard.state.data.phone = ctx.message.text;
+    ctx.wizard.state.data.mensaje = ctx.message.text;
     
     const query = util.promisify(conn.query).bind(conn);
 
@@ -65,9 +65,9 @@ const superWizard = new WizardScene(
         
         var mailOptions = {
           from: value,
-          to: ctx.wizard.state.data.name,
+          to: ctx.wizard.state.data.mail,
           subject: 'Asunto',
-          text: ctx.wizard.state.data.phone
+          text: ctx.wizard.state.data.mensaje
         };
         
       transporter.sendMail(mailOptions, function(error, info){
