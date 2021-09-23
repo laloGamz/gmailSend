@@ -82,13 +82,11 @@ const superWizard = new WizardScene(
 
       } finally {
         con.end();
+        return ctx.scene.leave();
       }
     })()
     
 
-    
-
-    return ctx.scene.leave();
   }
 );
 
