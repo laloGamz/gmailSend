@@ -82,8 +82,13 @@ bot.command('enviar', ctx => {
     if (!err) {
       ctx.scene.enter('super-wizard');
     } else {
-      
-      
+      try {
+        
+        ctx.reply('llave incorrecta');
+  
+    } catch (error) {
+  
+    }
     }
     
   });
