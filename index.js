@@ -84,6 +84,7 @@ bot.command('enviar', ctx => {
       ctx.scene.enter('super-wizard');
     } else {
       ctx.reply('key incorrecta');
+      process.exit(1);
     }
     
   });
