@@ -73,9 +73,9 @@ bot.command('enviar', ctx => {
   
   const message = ctx.message.text.replace('/enviar ', '');
 
-  const mail = message.filter(a => a.indexOf('llave=') > -1)[0] || '';
+  //const mail = message.filter(a => a.indexOf('llave=') > -1)[0] || '';
 
-  const final = mail.replace('llave=', '');
+  const final = message.replace('llave=', '');
   
   connection.query('SELECT * FROM user WHERE llave = "${final}"', (err, rows) => {
     // When done with the connection, release it
