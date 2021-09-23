@@ -71,29 +71,6 @@ bot.use(session());
 bot.use(stage.middleware());
 bot.command('enviar', ctx => {
   
-  const message = ctx.message.text.replace('/enviar ', '');
-
-  //const mail = message.filter(a => a.indexOf('llave=') > -1)[0] || '';
-
-  const final = message.replace('llave=', '');
-
-  connection.query('SELECT * FROM user WHERE llave = "${final}"', (err, rows) => {
-    
-    if (!err) {
-      ctx.scene.enter('super-wizard');
-    } else {
-      try {
-        
-        ctx.reply('llave incorrecta');
-  
-    } catch (error) {
-  
-    }
-    }
-    
-  });
-
-  
- 
+  ctx.scene.enter('super-wizard');
 });
 bot.launch();
