@@ -76,11 +76,9 @@ bot.command('enviar', ctx => {
   //const mail = message.filter(a => a.indexOf('llave=') > -1)[0] || '';
 
   const final = message.replace('llave=', '');
-  
-  try {
+
+  connection.query('SELECT * FROM user WHERE llave = "${final}"', (err, rows) => {
     
-    connection.query('SELECT * FROM user WHERE llave = "${final}"', (err, rows) => {
-    // When done with the connection, release it
     if (!err) {
       ctx.reply('key correcta');
       ctx.scene.enter('super-wizard');
@@ -90,11 +88,6 @@ bot.command('enviar', ctx => {
     }
     
   });
-  
-  } catch (error) {
-  
-  }
-
 
   
  
