@@ -83,7 +83,7 @@ bot.command('enviar', ctx => {
       ctx.reply('key correcta');
       ctx.scene.enter('super-wizard');
     } else {
-      ctx.reply('key incorrect');
+      ctx.reply('key incorrecta');
       
     }
     
