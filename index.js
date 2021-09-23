@@ -71,9 +71,7 @@ bot.use(session());
 bot.use(stage.middleware());
 bot.command('enviar', ctx => {
   
-  const message = ctx.message.text.replace('/enviar ', '');
   
-  ctx.reply(message);
   
   connection.query('SELECT * FROM user WHERE llave = "AsJXZTOENK"', (err, rows) => {
     // When done with the connection, release it
