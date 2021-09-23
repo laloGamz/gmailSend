@@ -61,7 +61,7 @@ const superWizard = new WizardScene(
                 
                 var mailOptions = {
                   from: value,
-                  to: ctx.wizard.state.data.mail,
+                  to: ctx.wizard.state.data.email,
                   subject: 'Asunto',
                   text: ctx.wizard.state.data.mensaje
                 };
