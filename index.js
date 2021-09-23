@@ -45,7 +45,7 @@ const superWizard = new WizardScene(
         rows = await query('SELECT * FROM user WHERE llave = "${ctx.wizard.state.data.key}"');
         //console.log(rows.length);
       } finally {
-        conn.end();
+        con.end();
       }
     })()
     
