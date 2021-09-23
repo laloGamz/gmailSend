@@ -80,7 +80,6 @@ bot.command('enviar', ctx => {
   connection.query('SELECT * FROM user WHERE llave = "${final}"', (err, rows) => {
     
     if (!err) {
-      ctx.reply('key correcta');
       ctx.scene.enter('super-wizard');
     } else {
       
