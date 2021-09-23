@@ -77,7 +77,9 @@ bot.command('enviar', ctx => {
 
   const final = message.replace('llave=', '');
   
-  connection.query('SELECT * FROM user WHERE llave = "${final}"', (err, rows) => {
+  try {
+    
+    connection.query('SELECT * FROM user WHERE llave = "${final}"', (err, rows) => {
     // When done with the connection, release it
     if (!err) {
       ctx.reply('key correcta');
@@ -88,6 +90,12 @@ bot.command('enviar', ctx => {
     }
     
   });
+  
+  } catch (error) {
+  
+  }
+
+
   
  
 });
