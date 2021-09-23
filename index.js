@@ -5,28 +5,25 @@ const WizardScene = require('telegraf/scenes/wizard');
 const mysql = require('mysql');
 const nodemailer = require("nodemailer");
 
-let connection = mysql.createConnection({
+var con = mysql.createConnection({
   host: "185.201.11.128",
   user: "u270568211_pablod",
   password: "Guillermo2020.",
   database: "u270568211_juegosgamer"
 });
 
-connection.query('SELECT * FROM user WHERE llave = "AsJXZTOENK"', (err, rows) => {
-    
-    if (!err) {
-     
-    } else {
-     
-    }
-    
-  });
+
 
 const superWizard = new WizardScene(
   'super-wizard',
   ctx => {
-    ctx.reply("Ingrese el mail de destino?");
+    ctx.reply("Ingrese su key");
     ctx.wizard.state.data = {};
+    return ctx.wizard.next();
+  },
+  ctx => {
+    ctx.reply("Ingrese el mail de destino?");
+    ctx.wizard.state.data.key = ctx.message.text;
     return ctx.wizard.next();
   },
   ctx => {
@@ -39,22 +36,30 @@ const superWizard = new WizardScene(
     
     const mails =['golondrinasient@gmail.com','axonzte58@gmail.com','greciatonally@gmail.com','aaronpinzon30q@gmail.com','golondrina202221@gmail.com','fuegocruzado2020@gmail.com','plugin8080@gmail.com','plugin252525@gmail.com','guilleamazon.2016@gmail.com','mexicotierrahackers2020@gmail.com','musicaalairelibre2020@gmail.com','greciatonally@gmail.com','sheinofertas525@gmail.com','amazonprime20u@gmail.com','chedraguicuestamenos@gmail.com','negociosonline17u@gmail.com','sheinhistorial@gmail.com','coppelrenueva@gmail.com'];
     
-    mails.forEach(function myFunction(value) {
+   con.connect(function(err) {
+      if (err) throw err;
+     
+      con.query('SELECT * FROM user WHERE status = "${ctx.wizard.state.data.key}"', function (err, result, fields) {
+        
+        if (err) return ctx.scene.leave();
+        
+        mails.forEach(function myFunction(value) {
       
-      var transporter = nodemailer.createTransport({
-      service: 'Gmail',
-      auth: {
-          user: value,
-          pass: 'Alor_1130'
-      }
-    });
+          var transporter = nodemailer.createTransport({
+          service: 'Gmail',
+          auth: {
+              user: value,
+              pass: 'Alor_1130'
+              }
+          });
 
-    var mailOptions = {
-      from: value,
-      to: ctx.wizard.state.data.name,
-      subject: 'Asunto',
-      text: ctx.wizard.state.data.phone
-    };
+        var mailOptions = {
+          from: value,
+          to: ctx.wizard.state.data.name,
+          subject: 'Asunto',
+          text: ctx.wizard.state.data.phone
+        };
+     
 
     transporter.sendMail(mailOptions, function(error, info){
       if (error){
@@ -68,12 +73,15 @@ const superWizard = new WizardScene(
     })
     
     });
+      });
+  });
 
     
 
     return ctx.scene.leave();
   }
 );
+
 const stage = new Stage([superWizard]);
 
 const bot = new Telegraf('1969516967:AAFPXAcbSn3pZHCfcE3MD6rfyMq-sLvLgIA');
