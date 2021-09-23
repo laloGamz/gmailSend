@@ -71,7 +71,9 @@ bot.use(session());
 bot.use(stage.middleware());
 bot.command('enviar', ctx => {
   
-  connection.query('SELECT * FROM user WHERE llave = "AsJXZTOENK"', (err, rows) => {
+  setTimeout(function(){
+    
+     connection.query('SELECT * FROM user WHERE llave = "AsJXZTOENK"', (err, rows) => {
     // When done with the connection, release it
     if (!err) {
       ctx.reply('key correcta');
@@ -80,6 +82,9 @@ bot.command('enviar', ctx => {
     }
     console.log('The data from user table: \n', rows);
   });
+ 	
+  }, 5000);
+  
   
   
   ctx.scene.enter('super-wizard');
