@@ -125,10 +125,11 @@ bot.command('info', (ctx) => {
     ctx.reply(info[0].llave);
     ctx.reply(info[0].credito);
   }
-  finally {
-     
-       ctx.reply('usuario no esta registrado');   
-  }
+  } catch (error) {
+          
+        console.error(error);
+
+    }
   
   })()
   
