@@ -49,7 +49,7 @@ const superWizard = new WizardScene(
         
         rows2 = await query(`SELECT credito FROM user WHERE llave ="${ctx.wizard.state.data.key}"`);
         
-        console.log(rows2);
+        console.log(rows2.credito);
 
         if(rows.length !=0){
 
