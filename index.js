@@ -126,7 +126,8 @@ bot.command('info', (ctx) => {
     ctx.reply(info[0].credito);
   }
   finally {
-     con.end();   
+     
+       ctx.reply('usuario no esta registrado');   
   }
   
   })()
