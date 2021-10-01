@@ -30,7 +30,7 @@ bot.command('info', (ctx) => {
     console.log(info[0].llave);
   }
   finally {
-        console.log('enviado');
+        con.end();
   }
   })()
   
