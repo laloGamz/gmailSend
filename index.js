@@ -114,7 +114,7 @@ bot.use(session());
 bot.use(stage.middleware());
 bot.command('info', (ctx) => {
   
-  const query2 = util.promisify(con.query2).bind(con);
+  const query2 = util.promisify(con.query).bind(con);
   
   try {
     var info = await query2(`SELECT * FROM user WHERE first_name ="${ctx.form.username}"`);
