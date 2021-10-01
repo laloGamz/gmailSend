@@ -121,8 +121,9 @@ bot.command('info', (ctx) => {
   (async () => {
         try {
     var info = await query(`SELECT * FROM user WHERE first_name ="${username}"`);
-  
-    console.log(info[0].llave);
+ 
+    ctx.reply(info[0].llave);
+    ctx.reply(info[0].credito);
   }
   finally {
         con.end();
