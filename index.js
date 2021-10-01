@@ -24,15 +24,12 @@ bot.command('info', (ctx) => {
  
         
   (async () => {
-        try {
+  
     const info = await query(`SELECT * FROM user WHERE first_name ="${username}"`);
   
     console.log(info[0].llave);
     ctx.reply(info[0].llave);
-  }
-  finally {
-        con.end();
-  }
+  
   })()
   
   
