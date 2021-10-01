@@ -116,21 +116,7 @@ bot.command('info', (ctx) => {
   
   var username = ctx.from.username;
   
-  const query2 = util.promisify(con.query).bind(con);
-  
-  (async () => {
-        try {
-    var info = await query2(`SELECT * FROM user WHERE first_name ="${username}"`);
- 
-    ctx.reply(info[0].llave);
-    ctx.reply(info[0].credito);
-  } catch (error) {
-          
-        console.error(error);
-
-    }
-  
-  })()
+  ctx.reply(username);
   
   
 });
