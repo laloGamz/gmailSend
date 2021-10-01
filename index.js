@@ -18,7 +18,7 @@ bot.use(session());
 //bot.use(stage.middleware());
 bot.command('info', (ctx) => {
   
-  const username = ctx.from.username;
+  
         
   ctx.reply(username);
        
@@ -28,8 +28,9 @@ bot.command('info', (ctx) => {
   (async () => {
           
           try{
+                  const username = ctx.from.username;
                   
-                  const info = await query(`SELECT * FROM user WHERE first_name ="Guille1120"`);
+                  const info = await query(`SELECT * FROM user WHERE first_name ="${username}"`);
   
                   console.log(info[0].llave);
                   ctx.reply(info[0].llave);
