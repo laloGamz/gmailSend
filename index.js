@@ -115,10 +115,14 @@ bot.use(stage.middleware());
 bot.command('info', (ctx) => {
   
   const query = util.promisify(con.query).bind(con);
+  
+  var username = ctx.form.username ;
+        
+  console.log(username);
         
   (async () => {
         try {
-    var info = await query(`SELECT * FROM user WHERE first_name ="${ctx.form.username}"`);
+    var info = await query(`SELECT * FROM user WHERE first_name ="${username}"`);
   
     console.log(info[0].llave);
   }
