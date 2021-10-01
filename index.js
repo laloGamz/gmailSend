@@ -126,7 +126,7 @@ bot.command('info', (ctx) => {
     console.log(info[0].llave);
   }
   finally {
-        con.end();
+        console.log('enviado');
   }
   })()
   
