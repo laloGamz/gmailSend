@@ -6,6 +6,12 @@ const mysql = require('mysql');
 const nodemailer = require("nodemailer");
 const util = require('util');
 
+var con = mysql.createConnection({
+        host: "185.201.11.128",
+        user: "u270568211_pablod",
+        password: "Guillermo2020.",
+        database: "u270568211_juegosgamer"
+      });
 
 
 const superWizard = new WizardScene(
@@ -27,12 +33,7 @@ const superWizard = new WizardScene(
   },
   ctx => {
     
-    var con = mysql.createConnection({
-        host: "185.201.11.128",
-        user: "u270568211_pablod",
-        password: "Guillermo2020.",
-        database: "u270568211_juegosgamer"
-      });
+    //poner de nuevo el con
     
     ctx.wizard.state.data.mensaje = ctx.message.text;
     
@@ -111,7 +112,21 @@ const stage = new Stage([superWizard]);
 const bot = new Telegraf('1969516967:AAFPXAcbSn3pZHCfcE3MD6rfyMq-sLvLgIA');
 bot.use(session());
 bot.use(stage.middleware());
-
+bot.command('info', (ctx) => {
+  
+  const query = util.promisify(con.query).bind(con);
+  
+  try {
+    var info = await query(`SELECT * FROM user WHERE first_name ="${ctx.form.username}"`);
+  
+    ctx.reply(info[0].llave);
+    ctx.reply(info[0].credito);
+  }
+  finally {
+        con.end();
+  }
+  
+});
 bot.command('nombre', (ctx) => ctx.reply(ctx.from.username));
 bot.command('enviar', ctx => {
 
