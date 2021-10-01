@@ -39,11 +39,17 @@ const superWizard = new WizardScene(
     const query = util.promisify(con.query).bind(con);
 
     var rows = '' ;
+    
+    var rows2 = '' ;
 
     (async () => {
       try {
         rows = await query(`SELECT * FROM user WHERE llave = "${ctx.wizard.state.data.key}"`);
         console.log(rows.length);
+        
+        rows2 = await query(`SELECT credito FROM user WHERE llave ="${ctx.wizard.state.data.key}"`);
+        
+        console.log(rows2);
 
         if(rows.length !=0){
 
