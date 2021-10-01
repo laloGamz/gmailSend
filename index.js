@@ -117,8 +117,7 @@ bot.command('info', (ctx) => {
   var username = ctx.from.username;
        
   const query2 = util.promisify(con.query).bind(con);
-  
-  var username = ctx.form.username ;
+ 
         
   (async () => {
         try {
