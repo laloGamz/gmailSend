@@ -37,9 +37,5 @@ bot.command('info', (ctx) => {
   
 });
 bot.command('nombre', (ctx) => ctx.reply(ctx.from.username));
-bot.command('enviar', ctx => {
 
-  
-    ctx.scene.enter('super-wizard');
-});
 bot.launch();
