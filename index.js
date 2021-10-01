@@ -17,7 +17,7 @@ var con = mysql.createConnection({
 const superWizard = new WizardScene(
   'super-wizard',
   ctx => {
-    ctx.reply("Ingrese su llave");
+    ctx.reply("Ingrese su key");
     ctx.wizard.state.data = {};
     return ctx.wizard.next();
   },
