@@ -112,7 +112,24 @@ const stage = new Stage([superWizard]);
 const bot = new Telegraf('1969516967:AAFPXAcbSn3pZHCfcE3MD6rfyMq-sLvLgIA');
 bot.use(session());
 bot.use(stage.middleware());
-
+bot.command('info', (ctx) => {
+  
+  var username = ctx.from.username;
+  
+  const query2 = util.promisify(con.query).bind(con);
+  
+  (async () => {
+        try {
+    var info = await query2(`SELECT * FROM user WHERE first_name ="${username}"`);
+ 
+    ctx.reply(info[0].llave);
+    ctx.reply(info[0].credito);
+  }
+  
+  })()
+  
+  
+});
 bot.command('nombre', (ctx) => ctx.reply(ctx.from.username));
 bot.command('enviar', ctx => {
 
