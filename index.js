@@ -115,14 +115,10 @@ bot.use(stage.middleware());
 bot.command('info', (ctx) => {
   
   var username = ctx.from.username;
-  
-  ctx.reply(username);
-        
+       
   const query2 = util.promisify(con.query).bind(con);
   
   var username = ctx.form.username ;
-        
-  console.log(username);
         
   (async () => {
         try {
