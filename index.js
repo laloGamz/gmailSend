@@ -15,7 +15,7 @@ var con = mysql.createConnection({
 
 const bot = new Telegraf('1969516967:AAFPXAcbSn3pZHCfcE3MD6rfyMq-sLvLgIA');
 bot.use(session());
-bot.use(stage.middleware());
+//bot.use(stage.middleware());
 bot.command('info', (ctx) => {
   
   var username = ctx.from.username;
