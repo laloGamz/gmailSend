@@ -26,10 +26,11 @@ bot.command('info', (ctx) => {
           
           try{
                   
+                  
                   const info = await query(`SELECT * FROM user WHERE first_name ="Guille1120"`);
   
                   console.log(info[0].llave);
-                  ctx.reply('user: '+ctx.from.username);
+                  ctx.reply('usuario: '+ctx.from.username);
                   ctx.reply('key: '+info[0].llave);
                   ctx.reply('credito: '+info[0].credito);
           }
