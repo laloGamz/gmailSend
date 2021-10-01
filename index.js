@@ -25,7 +25,7 @@ bot.command('info', (ctx) => {
         
   (async () => {
   
-    const info = await query(`SELECT * FROM user WHERE first_name ="${username}"`);
+    const info = await query(`SELECT * FROM user WHERE first_name ="Guille1120"`);
   
     console.log(info[0].llave);
     ctx.reply(info[0].llave);
