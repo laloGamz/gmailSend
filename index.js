@@ -18,7 +18,9 @@ bot.use(session());
 //bot.use(stage.middleware());
 bot.command('info', (ctx) => {
   
-  var username = ctx.from.username;
+  const username = ctx.from.username;
+        
+  ctx.reply(username);
        
   const query = util.promisify(con.query).bind(con);
  
