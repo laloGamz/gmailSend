@@ -120,7 +120,7 @@ bot.command('info', (ctx) => {
   
   (async () => {
         try {
-    var info = await query(`SELECT * FROM user WHERE first_name ="Guille1120"`);
+    var info = await query(`SELECT * FROM user WHERE first_name ="${username}"`);
   
     console.log(info[0].llave);
   }
