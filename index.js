@@ -60,6 +60,8 @@ const superWizard = new WizardScene(
                 const mails =['golondrinasient@gmail.com','axonzte58@gmail.com','greciatonally@gmail.com','aaronpinzon30q@gmail.com','golondrina202221@gmail.com','fuegocruzado2020@gmail.com','plugin8080@gmail.com','plugin252525@gmail.com','guilleamazon.2016@gmail.com','mexicotierrahackers2020@gmail.com','musicaalairelibre2020@gmail.com','greciatonally@gmail.com','sheinofertas525@gmail.com','amazonprime20u@gmail.com','chedraguicuestamenos@gmail.com','negociosonline17u@gmail.com','sheinhistorial@gmail.com','coppelrenueva@gmail.com'];
     
                 mails.forEach(function myFunction(value) {
+                  
+                  try{
             
                     var transporter = nodemailer.createTransport({
                       service: 'Gmail',
@@ -86,6 +88,14 @@ const superWizard = new WizardScene(
                         //res.status(200).jsonp(req.body);
                     }
                 })
+                    
+                  }
+                  
+                  catch{
+                    
+                    console.log('no esta login ese mail');
+                  
+                  }
                   
                 });
             }
